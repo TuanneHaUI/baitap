@@ -58,7 +58,7 @@ public class QLNVControler implements ActionListener {
 					gioitinh = false;
 				}
 				// bắt lỗi định dạng nếu 1 trong hai mà lỗi thì không cho in vô table
-				if (luong == 0.0 || sodienthoai == 0) {
+				if (luong < 0.0 || sodienthoai < 0) {
 					// không làm gì cả
 				} else {
 					Nhanvien nv = new Nhanvien(tennhanvien, gioitinh, cv, sodienthoai, email, tinh, manhanvien, luong);
