@@ -356,7 +356,10 @@ public class Giaodien extends JFrame {
 			this.themNhanVien(nv); // Thêm nhân viên mới vào bảng hiển thị
 		} else if (this.qlnv.kiemTraTonTai(nv)) {
 			this.qlnv.capnhat(nv);
-		
+			int i_row = table.getSelectedRow();// lấy vị trí thứ tự xem người ta đang chọn dòng nào
+			Nhanvien nv1 = getNhanVienDangDuocChon();
+			this.qlnv.xoa(nv1); // Xóa khỏi dữ liệu thực
+//			model_table.removeRow(i_row); // Xóa khỏi bảng
 			// Cập nhật thông tin của nhân viên trong bảng hiển thị
 			int soLuongDong = model_table.getRowCount();
 			for (int i = 0; i < soLuongDong; i++) {
@@ -372,6 +375,7 @@ public class Giaodien extends JFrame {
 					model_table.setValueAt(nv.getLuong() + "", i, 7);
 				}
 			}
+		
 		}
 	}
 
